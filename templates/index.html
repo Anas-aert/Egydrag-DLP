@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <section>
+      <form method="get" id="youtubeForm">
+        <input
+          type="text"
+          name="vidurl"
+          id="vidurl"
+          placeholder="Enter YouTube URL"
+          required
+        />
+        <span
+          id="urlError"
+          style="color: #ff4444; display: none; margin: 5px 0"
+        ></span>
+        <div id="downloadProgress" style="display: none">
+          <div class="progress-bar"></div>
+          <span class="status">Downloading...</span>
+        </div>
+        <input type="submit" value="Download" />
+      </form>
+      <div id="videoContainer" style="display: none; margin-top: 20px">
+        <iframe
+          width="560"
+          height="315"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

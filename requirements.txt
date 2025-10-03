@@ -1,0 +1,4 @@
+flask
+flask-talisman
+yt-dlp
+gunicorn
